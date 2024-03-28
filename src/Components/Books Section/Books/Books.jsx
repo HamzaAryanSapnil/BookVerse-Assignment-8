@@ -17,9 +17,9 @@ const Books = () => {
     }, [])
     
     return (
-        <div className="mx-auto" >
+        <div className="mx-auto container " >
             Books: {books.length}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center" >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center justify-center items-center content-stretch" >
                 {
                     books.map((book) => (
                         <Book key={book?.bookId} book={book}></Book>
