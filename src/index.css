@@ -23,5 +23,5 @@
 }
 
 .bookIdentity{
-    @apply  text-btnBgSignIn bg-btnBgSignInFive font-work font-medium text-base;
+    @apply  text-btnBgSignIn bg-btnBgSignInFive font-work font-medium text-base rounded-full;
 }

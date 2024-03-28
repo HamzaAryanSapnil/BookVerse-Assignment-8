@@ -16,6 +16,7 @@ export default {
         btnBgSignIn: "#23BE0A",
         btnBgSignInFive: "#23BE0A0D",
         btnBgSignup: "#59C6D2",
+        bookImgBg: "#F3F3F3"
       },
       
       
