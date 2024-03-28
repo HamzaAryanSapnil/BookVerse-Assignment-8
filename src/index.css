@@ -21,3 +21,7 @@
 .navInActive {
     @apply  text-navHeadingEighty font-work text-lg;
 }
+
+.bookIdentity{
+    @apply  text-btnBgSignIn bg-btnBgSignInFive font-work font-medium text-base;
+}
