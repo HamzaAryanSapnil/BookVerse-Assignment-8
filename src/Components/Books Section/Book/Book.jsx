@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { TiStarFullOutline } from "react-icons/ti";
 const Book = ({ book }) => {
   console.log(book?.bookId);
   const { bookId, image, bookName, author, category, rating, price, cover } =
@@ -27,8 +28,9 @@ const Book = ({ book }) => {
             <p className="text-navHeadingEighty font-medium font-work text-base">
               {category}
             </p>
-            <div>
-              <p> {rating} </p>
+            <div className="flex gap-x-4 justify-center items-center" >
+              <p className="text-navHeadingEighty font-work font-medium" > {rating} </p>
+              <p className={rating >= 4.5 ? "text-yellow-400" : "text-rating"} > <TiStarFullOutline></TiStarFullOutline> </p>
             </div>
           </div>
         </div>
