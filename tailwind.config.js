@@ -12,6 +12,7 @@ export default {
       },
       colors: {
         navHeading: "#131313",
+        navHeadingFive: "#1313130D",
         navHeadingEighty: "#131313CC",
         btnBgSignIn: "#23BE0A",
         btnBgSignInFive: "#23BE0A0D",

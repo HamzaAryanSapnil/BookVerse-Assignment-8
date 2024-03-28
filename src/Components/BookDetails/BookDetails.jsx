@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import {
   getStoredReadingList,
   getStoredWishlist,
+  removeFromWishlist,
   saveReadingList,
   saveWishlist,
 } from "../../Utils/localStorage";
@@ -28,28 +29,30 @@ const BookDetails = () => {
   } = book ?? {};
 
   const handleWishlistBtn = () => {
-
     const getBooksFromReadingList = getStoredReadingList();
     const getBooksFromWishlist = getStoredWishlist();
     if (getBooksFromWishlist.includes(bookIdInt)) {
       toast("Already added to wishlist");
       return;
-    } else if (getBooksFromReadingList.includes(bookIdInt)) {
+    } else if (
+      getBooksFromReadingList.includes(bookIdInt) &&
+      !getBooksFromWishlist.includes(bookIdInt)
+    ) {
       toast("You Have Already Read This Book");
       return;
-        
+    } else if (!getBooksFromWishlist.includes(bookIdInt)) {
+      saveWishlist(bookIdInt);
+      toast("Added to wishlist");
     }
-    saveReadingList(bookIdInt);
-    saveWishlist(bookIdInt);
-    toast("Added to wishlist");
   };
   const handleReadBtn = () => {
-    const getBooks = getStoredReadingList();
-    if (getBooks.includes(bookIdInt)) {
+    const getBooksFromReadingList = getStoredReadingList();
+    if (getBooksFromReadingList.includes(bookIdInt)) {
       toast("Already read this book");
       return;
-    }
+    } 
     saveReadingList(bookIdInt);
+    removeFromWishlist(bookIdInt);
     toast("Thanks for reading this book");
   };
   return (
@@ -110,7 +113,9 @@ const BookDetails = () => {
             >
               Read
             </button>
-            <button onClick={handleWishlistBtn} className="btn signUpBtn">Wishlist</button>
+            <button onClick={handleWishlistBtn} className="btn signUpBtn">
+              Wishlist
+            </button>
           </div>
         </div>
       </div>
