@@ -4,7 +4,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   getStoredReadingList,
+  getStoredWishlist,
   saveReadingList,
+  saveWishlist,
 } from "../../Utils/localStorage";
 
 const BookDetails = () => {
@@ -24,6 +26,23 @@ const BookDetails = () => {
     yearOfPublishing,
     rating,
   } = book ?? {};
+
+  const handleWishlistBtn = () => {
+
+    const getBooksFromReadingList = getStoredReadingList();
+    const getBooksFromWishlist = getStoredWishlist();
+    if (getBooksFromWishlist.includes(bookIdInt)) {
+      toast("Already added to wishlist");
+      return;
+    } else if (getBooksFromReadingList.includes(bookIdInt)) {
+      toast("You Have Already Read This Book");
+      return;
+        
+    }
+    saveReadingList(bookIdInt);
+    saveWishlist(bookIdInt);
+    toast("Added to wishlist");
+  };
   const handleReadBtn = () => {
     const getBooks = getStoredReadingList();
     if (getBooks.includes(bookIdInt)) {
@@ -91,7 +110,7 @@ const BookDetails = () => {
             >
               Read
             </button>
-            <button className="btn signUpBtn">Wishlist</button>
+            <button onClick={handleWishlistBtn} className="btn signUpBtn">Wishlist</button>
           </div>
         </div>
       </div>
