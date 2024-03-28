@@ -1,12 +1,16 @@
 import PropTypes from "prop-types";
 import { TiStarFullOutline } from "react-icons/ti";
+import { NavLink } from "react-router-dom";
 const Book = ({ book }) => {
+
+    
+
   console.log(book?.bookId);
   const { bookId, image, bookName, author, category, rating, price, cover } =
     book ?? {};
   return (
-    <div>
-      <div className="card w-full md:w-72 lg:w-96 bg-base-100 shadow-xl">
+    <NavLink to="/bookdetails" >
+      <div  className="card w-full md:w-72 lg:w-96 bg-base-100 shadow-xl">
         <figure className="bg-bookImgBg">
           <img className="h-64 w-48 rounded-3xl my-4" src={image} alt="Shoes" />
         </figure>
@@ -35,7 +39,7 @@ const Book = ({ book }) => {
           </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 
