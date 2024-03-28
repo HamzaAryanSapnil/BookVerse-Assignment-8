@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { saveReadingList } from "../../Utils/localStorage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  getStoredReadingList,
+  saveReadingList,
+} from "../../Utils/localStorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -22,6 +25,11 @@ const BookDetails = () => {
     rating,
   } = book ?? {};
   const handleReadBtn = () => {
+    const getBooks = getStoredReadingList();
+    if (getBooks.includes(bookIdInt)) {
+      toast("Already read this book");
+      return;
+    }
     saveReadingList(bookIdInt);
     toast("Thanks for reading this book");
   };
@@ -77,8 +85,13 @@ const BookDetails = () => {
           </div>
 
           <div className="flex items-center gap-x-4">
-            <button onClick={handleReadBtn} className="btn border-2 bg-transparent" >Read</button>
-            <button className="btn signUpBtn" >Wishlist</button>
+            <button
+              onClick={handleReadBtn}
+              className="btn border-2 bg-transparent"
+            >
+              Read
+            </button>
+            <button className="btn signUpBtn">Wishlist</button>
           </div>
         </div>
       </div>
