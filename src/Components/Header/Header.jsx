@@ -1,11 +1,40 @@
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const links = <>
-    <li><NavLink to="/" >Home</NavLink></li>
-    <li><NavLink to="/listedbooks" >Listed Books</NavLink></li>
-    <li><NavLink to="/pagestoread" >Pages To Read</NavLink></li>
-  </>
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({isActive}) => {
+            return isActive ? "navActive" : "navInActive" 
+          } }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/listedbooks"
+          className={({isActive}) => {
+            return isActive ? "navActive" : "navInActive" 
+          } }
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/pagestoread"
+          className={({isActive}) => {
+            return isActive ? "navActive" : "navInActive" 
+          } }
+        >
+          Pages To Read
+        </NavLink>
+      </li>
+    </>
+  );
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -30,18 +59,33 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-           {links}
+            {links}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">BookVerse</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end hidden md:flex gap-x-4 ">
+        <a className="btn signInBtn">Sign In</a>
+        <a className="btn signUpBtn">Sign Up</a>
+      </div>
+
+      <div className="navbar-end  md:hidden flex-col">
+        <details className="dropdown">
+          <summary className="m-1 text-white font-bold btn bg-gradient-to-r from-btnBgSignIn to-[#3a7bd5]">
+            Sign IN UP
+          </summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box gap-y-2 ">
+            <li>
+              <a className="btn signInBtn">Sign In</a>
+            </li>
+            <li>
+              <a className="btn signUpBtn ">Sign Up</a>
+            </li>
+          </ul>
+        </details>
       </div>
     </div>
   );

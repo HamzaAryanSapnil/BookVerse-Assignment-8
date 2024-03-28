@@ -3,3 +3,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.signInBtn {
+    @apply  bg-btnBgSignIn font-work font-semibold text-white md:text-lg;
+}
+.signUpBtn {
+    @apply  bg-btnBgSignup font-work font-semibold text-white md:text-lg;
+}
+.bannerBtn {
+    @apply  bg-btnBgSignIn font-work font-bold text-white text-xl;
+}
+
+.navActive {
+    @apply border-2 border-btnBgSignIn bg-transparent text-btnBgSignIn font-semibold font-work text-lg;
+}
+.navInActive {
+    @apply  text-navHeadingEighty font-work text-lg;
+}

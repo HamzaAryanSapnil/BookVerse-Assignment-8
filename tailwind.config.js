@@ -10,10 +10,14 @@ export default {
         'playfair': ['Playfair Display', 'serif'],
         'work': ['Work Sans', 'sans-serif']
       },
-      color: {
+      colors: {
         navHeading: "#131313",
         navHeadingEighty: "#131313CC",
-      }
+        btnBgSignIn: "#23BE0A",
+        btnBgSignup: "#59C6D2",
+      },
+      
+      
     },
   },
   plugins: [require("daisyui")],
