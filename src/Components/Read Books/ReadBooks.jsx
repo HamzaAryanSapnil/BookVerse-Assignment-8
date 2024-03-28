@@ -20,7 +20,7 @@ const ReadBooks = () => {
     console.log(books); 
     return (
         <div>
-            This is read books
+            
         </div>
     );
 };
