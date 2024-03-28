@@ -5,7 +5,6 @@ const Book = ({ book }) => {
 
     
 
-  console.log(book?.bookId);
   const { bookId, image, bookName, author, category, rating, price, cover } =
     book ?? {};
   return (

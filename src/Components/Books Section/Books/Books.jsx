@@ -14,7 +14,7 @@ const Books = () => {
 
     
       
-    }, [])
+    }, [books])
     
     return (
         <div className="mx-auto container " >
