@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { saveReadingList } from "../../Utils/localStorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -20,7 +21,10 @@ const BookDetails = () => {
     yearOfPublishing,
     rating,
   } = book ?? {};
-
+  const handleReadBtn = () => {
+    saveReadingList(bookIdInt);
+    toast("Thanks for reading this book");
+  };
   return (
     <div>
       <div className="flex">
@@ -73,7 +77,7 @@ const BookDetails = () => {
           </div>
 
           <div className="flex items-center gap-x-4">
-            <button className="btn border-2 bg-transparent" >Read</button>
+            <button onClick={handleReadBtn} className="btn border-2 bg-transparent" >Read</button>
             <button className="btn signUpBtn" >Wishlist</button>
           </div>
         </div>
