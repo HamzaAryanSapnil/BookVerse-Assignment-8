@@ -69,6 +69,11 @@ const BookDetails = () => {
               </tbody>
             </table>
           </div>
+
+          <div className="flex items-center gap-x-4">
+            <button className="btn border-2 bg-transparent" >Read</button>
+            <button className="btn signUpBtn" >Wishlist</button>
+          </div>
         </div>
       </div>
     </div>
