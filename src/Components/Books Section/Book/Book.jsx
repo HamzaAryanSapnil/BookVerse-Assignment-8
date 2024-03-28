@@ -5,18 +5,28 @@ const Book = ({ book }) => {
 
     
 
-  const { bookId, image, bookName, author, category, rating, price, cover } =
+  const { bookId, image, bookName, author, category, rating, tags} =
     book ?? {};
   return (
-    <NavLink to="/bookdetails" >
+    <NavLink to={`/bookdetails/${bookId}`} >
       <div  className="card w-full md:w-72 lg:w-96 bg-base-100 shadow-xl">
         <figure className="bg-bookImgBg">
           <img className="h-64 w-48 rounded-3xl my-4" src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
+        {/* <button className="btn bookIdentity">Young Adult</button>
+            <button className="btn bookIdentity">Identity</button> */}
           <div className="flex gap-x-3">
-            <button className="btn bookIdentity">Young Adult</button>
-            <button className="btn bookIdentity">Identity</button>
+          {
+            tags.map((tag, idx) => (
+              <button
+                key={idx}
+                className="btn bookIdentity"
+              >
+                {tag}
+              </button>
+            ))
+          }
           </div>
           <div className="space-y-3 border-b-2 border-dashed py-4">
             <h2 className="card-title font-playfair text-navHeading text-2xl font-bold">

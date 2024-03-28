@@ -1,30 +1,80 @@
-
-import PropTypes from 'prop-types';
-import { useLoaderData, useParams } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const BookDetails = () => {
-    const books = useLoaderData();
-    const {image, bookName, author, category, rating,  review, tags, totalPages, publisher,yearOfPublishing} = useParams() ;
-    console.log(bookName, books);
-    return (
+  const books = useLoaderData();
+  const { bookId } = useParams();
+  const bookIdInt = parseInt(bookId);
+  const book = books.find((book) => book.bookId === bookIdInt);
+  const {
+    image,
+    bookName,
+    author,
+    category,
+    review,
+    tags,
+    totalPages,
+    publisher,
+    yearOfPublishing,
+    rating,
+  } = book ?? {};
+
+  return (
+    <div>
+      <div className="flex">
         <div>
-            <div className='flex' >
-                <div>
-                    <img src={image} alt="" />
-                </div>
-                <div>
-                    <div>
-                        <h1>{bookName}</h1>
-                        <p>By: {author}</p>
-                    </div>
-                </div>
-            </div>
+          <img src={image} alt="" />
         </div>
-    );
+        <div>
+          <div className="border-b-2">
+            <h1>{bookName}</h1>
+            <p>By: {author}</p>
+          </div>
+          <p className="border-b-2">{category}</p>
+          <p>
+            <span>Review: </span> {review}
+          </p>
+
+          <div className="flex gap-x-3  items-center border-b-2">
+            <p>Tags: </p>
+            {tags.map((tag, idx) => (
+              <button key={idx} className="btn bookIdentity">
+                {tag}
+              </button>
+            ))}
+          </div>
+          <div className="overflow-x-auto">
+            <table className="table">
+              <tbody>
+                {/* row 1 */}
+                <tr>
+                  <td>Number of Pages</td>
+                  <td>{totalPages}</td>
+                </tr>
+                {/* row 2 */}
+                <tr>
+                  <td>Publisher</td>
+                  <td>{publisher}</td>
+                </tr>
+                {/* row 3 */}
+                <tr>
+                  <td>Year Of Publishing</td>
+                  <td>{yearOfPublishing}</td>
+                </tr>
+                {/* row 4 */}
+                <tr>
+                  <td>Rating</td>
+                  <td>{rating}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-BookDetails.propTypes = {
-    
-};
+BookDetails.propTypes = {};
 
 export default BookDetails;
