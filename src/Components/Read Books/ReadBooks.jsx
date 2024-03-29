@@ -42,7 +42,7 @@ const ReadBooks = () => {
                   By: {book.author}
                 </p>
               </div>
-              <div className="flex gap-x-3 justify-start items-center pb-3">
+              <div className="flex flex-wrap gap-y-2 gap-x-3 justify-start items-center pb-3">
                 <span className="text-navHeading font-bold font-work text-base">
                   Tag
                 </span>
@@ -74,7 +74,7 @@ const ReadBooks = () => {
                   Page: {book.totalPages}
                 </p>
               </div>
-              <div className="flex gap-x-3 justify-start items-center py-3">
+              <div className="flex flex-wrap gap-y-2 gap-x-3 justify-start items-center py-3">
                 <button className="btn catagoryBtn rounded-full">
                   Catagory: {book.category}
                 </button>
