@@ -15,15 +15,16 @@ const ListedBooks = () => {
       setWishBooks(booksInWishlist);
     }
   }, [books]);
-//   const { bookId, image, bookName, author, category, rating, tags } = wishBooks ?? {};
+  //   const { bookId, image, bookName, author, category, rating, tags } = wishBooks ?? {};
+  console.log(wishBooks);
   return (
     <div className="container mx-auto">
-      <div className="p-4" >
-      <div className="lg:max-w-7xl mx-auto flex justify-center items-center bg-navHeadingFive py-8 my-8 rounded-3xl ">
-        <button className="  text-navHeading font-bold font-work text-3xl ">
-          Books
-        </button>
-      </div>
+      <div className="p-4">
+        <div className="lg:max-w-7xl mx-auto flex justify-center items-center bg-navHeadingFive py-8 my-8 rounded-3xl ">
+          <button className="  text-navHeading font-bold font-work text-3xl ">
+            Books
+          </button>
+        </div>
       </div>
 
       <div className="flex justify-center items-center my-10 z-10">
@@ -58,11 +59,10 @@ const ListedBooks = () => {
                   tabIndex === 0 ? "border border-b-0" : "border-b"
                 } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
               >
-                
                 <span>Read Books</span>
               </Link>
               <Link
-              to={"wishlist"}
+                to={"wishlist"}
                 onClick={() => setTabIndex(1)}
                 rel="noopener noreferrer"
                 href="#"
@@ -70,20 +70,13 @@ const ListedBooks = () => {
                   tabIndex === 1 ? "border border-b-0" : "border-b"
                 } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
               >
-                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-			<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-			<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-		</svg> */}
                 <span>Wishlist</span>
               </Link>
             </div>
           </div>
-          <Outlet></Outlet> 
+          <Outlet></Outlet>
         </article>
-        
-       
       </div>
-      
     </div>
   );
 };
