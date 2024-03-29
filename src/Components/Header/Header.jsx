@@ -47,6 +47,16 @@ const Header = () => {
           About
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/login"
+          className={({isActive}) => {
+            return isActive ? "navActive" : "navInActive" 
+          } }
+        >
+          Login
+        </NavLink>
+      </li>
     </>
   );
   return (
