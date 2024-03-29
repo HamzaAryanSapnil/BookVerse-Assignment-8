@@ -11,6 +11,7 @@ import PagesToRead from "./Components/Pages To Read/PagesToRead.jsx";
 import BookDetails from "./Components/BookDetails/BookDetails.jsx";
 import ReadBooks from "./Components/Read Books/ReadBooks.jsx";
 import Wishlist from "./Components/WishList/Wishlist.jsx";
+import About from "./Components/About/About.jsx";
 
 
 
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element
+        element: <About></About>
       }
     ],
   },

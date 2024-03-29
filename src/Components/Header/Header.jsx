@@ -37,6 +37,16 @@ const Header = () => {
           Pages To Read
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({isActive}) => {
+            return isActive ? "navActive" : "navInActive" 
+          } }
+        >
+          About
+        </NavLink>
+      </li>
     </>
   );
   return (
