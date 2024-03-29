@@ -14,6 +14,7 @@ export default {
         navHeading: "#131313",
         navHeadingFive: "#1313130D",
         navHeadingEighty: "#131313CC",
+        navHeadingSeventy: "#131313B3",
         btnBgSignIn: "#23BE0A",
         btnBgSignInFive: "#23BE0A0D",
         btnBgSignup: "#59C6D2",
