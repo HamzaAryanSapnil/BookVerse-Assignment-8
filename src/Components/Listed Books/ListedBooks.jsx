@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 import { getStoredWishlist } from "../../Utils/localStorage";
 
+
+
 const ListedBooks = () => {
   const books = useLoaderData();
   const [wishBooks, setWishBooks] = useState([]);
@@ -16,7 +18,7 @@ const ListedBooks = () => {
     }
   }, [books]);
   //   const { bookId, image, bookName, author, category, rating, tags } = wishBooks ?? {};
-  console.log(wishBooks);
+  // console.log(wishBooks);
   return (
     <div className="container mx-auto">
       <div className="p-4">
@@ -30,7 +32,7 @@ const ListedBooks = () => {
       <div className="flex justify-center items-center my-10 z-10">
         <button className="btn signInBtn">
           <details className=" signInBtn">
-            <summary className="m-1 signInBtn">Sort By</summary>
+            <summary  className="m-1 signInBtn">Sort By</summary>
             <ul className="p-2 shadow menu  z-10  rounded-box w-52 signInBtn ">
               <li>
                 <a>Rating</a>

@@ -1,20 +1,23 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
-    <div className="container mx-auto" >
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="container mx-auto p-4">
+      <div className="hero h-[500px] md:h-[550px] bg-base-200 rounded-2xl">
+        <div className="flex flex-col lg:flex-row-reverse justify-around items-center w-full gap-y-4">
           <img
-            src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+            src="https://i.postimg.cc/Bn6hHJQS/the-alchemist.jpg"
             className="max-w-sm rounded-lg shadow-2xl"
           />
-          <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
+          <div className="">
+            <h1 className="text-3xl lg:text-6xl font-bold">
+              Books to freshen up <br /> your bookshelf
+            </h1>
+            <div className="lg:mt-12 mt-7" >
+              <Link to={`/listedbooks`}>
+                <button className="btn signInBtn" >View The List</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
