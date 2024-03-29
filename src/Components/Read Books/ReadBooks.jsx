@@ -6,7 +6,6 @@ import { getStoredReadingList } from "../../Utils/localStorage";
 const ReadBooks = () => {
   const books = useLoaderData();
   const [readBooks, setReadBooks] = useState([]);
-  console.log("read Books");
   useEffect(() => {
     const readBooks = getStoredReadingList();
     console.log(readBooks);
@@ -18,7 +17,6 @@ const ReadBooks = () => {
     }
   }, [books]);
 
-  console.log(books);
   return (
     <div>
       {readBooks.map((book) => (
