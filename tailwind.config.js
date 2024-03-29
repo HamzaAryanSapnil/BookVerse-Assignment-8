@@ -18,7 +18,9 @@ export default {
         btnBgSignInFive: "#23BE0A0D",
         btnBgSignup: "#59C6D2",
         bookImgBg: "#F3F3F3",
-        rating: "#424242"
+        rating: "#424242",
+        ratingBtnBgFifteen: "#FFAC3326",
+        ratingBtnColor: "#FFAC33",
       },
       
       
