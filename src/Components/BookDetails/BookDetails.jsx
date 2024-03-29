@@ -56,12 +56,12 @@ const BookDetails = () => {
     toast("Thanks for reading this book");
   };
   return (
-    <div className=" container flex justify-center items-center lg:p-10 " >
+    <div className=" container flex justify-center items-center lg:p-10 p-4" >
       <div className="flex justify-center items-start gap-x-6 lg:flex-row flex-col">
         <div className="bg-navHeadingFive w-full lg:h-[700px] lg:w-1/2 flex justify-center items-center rounded-lg" >
           <img className="lg:h-[500px] lg:w-[400px]  rounded-lg" src={image} alt="" />
         </div>
-        <div className="w-1/2" >
+        <div className="lg:w-1/2" >
           <div className="border-b-2 space-y-4">
             <h1 className="text-navHeading font-playfair font-bold text-4xl" >{bookName}</h1>
             <p className="text-navHeadingEighty font-work text-xl font-medium pb-3" >By: {author}</p>
