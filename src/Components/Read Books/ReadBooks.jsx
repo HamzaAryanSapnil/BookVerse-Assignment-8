@@ -52,10 +52,9 @@ const ReadBooks = () => {
                   </button>
                 ))}
                 <p className="text-navHeadingEighty font-work text-base flex justify-start gap-x-3 items-center">
-                  {" "}
                   <span>
                     <CiLocationOn />
-                  </span>{" "}
+                  </span>
                   Year of Publishing: {book.yearOfPublishing}
                 </p>
               </div>

@@ -37,11 +37,11 @@ const saveReadingList = (id) => {
 const removeFromWishlist = (id) => {
   const storedWishlist = getStoredWishlist();
   console.log(id, storedWishlist);
-  const exists = storedWishlist.find((bookExist) => bookExist === id);
+  // const exists = storedWishlist.find((bookExist) => bookExist === id);
   // console.log("exists: ", exists, "storedWishlist: ", storedWishlist);
   const newWishlist = storedWishlist.filter((bookId) => bookId !== id);
   // console.log("newWishlist: ", newWishlist);
-  saveWishlist(newWishlist);
+  localStorage.setItem("wishlist", JSON.stringify(newWishlist));
 };
 
 export {

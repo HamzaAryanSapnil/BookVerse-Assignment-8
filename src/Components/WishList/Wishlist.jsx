@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import  { useEffect, useState } from "react";
 import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { getStoredWishlist } from "../../Utils/localStorage";
+import { IoPeople } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
+import { MdInsertPageBreak } from "react-icons/md";
 
 const Wishlist = () => {
   const books = useLoaderData();
@@ -19,7 +21,7 @@ const Wishlist = () => {
   return wishBooks.length === 0 ? (
     <p>No books in wishlist</p>
   ) : (
-    <div>
+    <div className="lg:space-y-8" >
       {wishBooks.map((book) => (
         <section
           key={book.bookId}
@@ -36,7 +38,7 @@ const Wishlist = () => {
                 className="object-cover h-64 w-full rounded-3xl sm:h-96 lg:col-span-3 dark:bg-gray-500"
               />
               <div className="p-6 space-y-2 lg:col-span-9">
-                <div className="">
+                <div className="space-y-3">
                   <h2 className="card-title font-playfair text-navHeading text-2xl font-bold">
                     {book.bookName}
                   </h2>
@@ -45,24 +47,24 @@ const Wishlist = () => {
                     By: {book.author}
                   </p>
                 </div>
-                <div className="flex gap-x-3 justify-start items-center">
+                <div className="flex gap-x-3 justify-start items-center flex-wrap gap-y-2 py-3">
                   Tag
                   {book.tags.map((tag, idx) => (
                     <button key={idx} className="btn bookIdentity">
                       {tag}
                     </button>
                   ))}
-                  <p>Year of Publishing: {book.yearOfPublishing}</p>
+                  <p className="text-navHeadingEighty font-medium font-work text-base flex items-center gap-x-2" > <CiLocationOn /> Year of Publishing: {book.yearOfPublishing}</p>
                 </div>
-                <div className="card-actions justify-start border-b-2">
-                  <p className="text-navHeadingEighty font-medium font-work text-base">
-                    Publisher: {book.publisher}
+                <div className="card-actions justify-start border-b-2 py-3">
+                  <p className="text-navHeadingSixty  font-work text-base flex items-center gap-x-3 ">
+                  <IoPeople /> Publisher: {book.publisher}
                   </p>
-                  <p className="text-navHeadingEighty font-medium font-work text-base">
-                    Page: {book.totalPages}
+                  <p className=" text-navHeadingSixty  font-work text-base flex items-center gap-x-3">
+                  <MdInsertPageBreak /> Page: {book.totalPages}
                   </p>
                 </div>
-                <div className="flex gap-x-3 justify-start items-center">
+                <div className="flex gap-x-3 flex-wrap gap-y-2 justify-start items-center py-3">
                   <button className="btn catagoryBtn rounded-full">
                     Catagory: {book.category}
                   </button>
@@ -84,6 +86,5 @@ const Wishlist = () => {
   );
 };
 
-Wishlist.propTypes = {};
 
 export default Wishlist;
