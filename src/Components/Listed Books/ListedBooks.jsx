@@ -18,29 +18,34 @@ const ListedBooks = () => {
 //   const { bookId, image, bookName, author, category, rating, tags } = wishBooks ?? {};
   return (
     <div className="container mx-auto">
-      <div className="w-full flex justify-center items-center bg-navHeadingFive py-8 my-8">
-        <button className=" w-full text-navHeading font-bold font-work text-3xl ">
+      <div className="p-4" >
+      <div className="lg:max-w-7xl mx-auto flex justify-center items-center bg-navHeadingFive py-8 my-8 rounded-3xl ">
+        <button className="  text-navHeading font-bold font-work text-3xl ">
           Books
         </button>
       </div>
+      </div>
 
-      <div className="flex justify-center items-center my-10">
+      <div className="flex justify-center items-center my-10 z-10">
         <button className="btn signInBtn">
           <details className=" signInBtn">
             <summary className="m-1 signInBtn">Sort By</summary>
-            <ul className="p-2 shadow menu  z-[1]  rounded-box w-52 signInBtn ">
+            <ul className="p-2 shadow menu  z-10  rounded-box w-52 signInBtn ">
               <li>
-                <a>Item 1</a>
+                <a>Rating</a>
               </li>
               <li>
-                <a>Item 2</a>
+                <a>Number Of Pages</a>
+              </li>
+              <li>
+                <a>Publish Year</a>
               </li>
             </ul>
           </details>
         </button>
       </div>
 
-      <div className="max-w-4xl px-6 py-16 mx-auto space-y-12">
+      <div className="max-w-7xl px-6 py-16 mx-auto space-y-12 z-0">
         <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
           <div className="space-y-6">
             {/* tabs */}
@@ -53,9 +58,7 @@ const ListedBooks = () => {
                   tabIndex === 0 ? "border border-b-0" : "border-b"
                 } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
               >
-                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-			<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-		</svg> */}
+                
                 <span>Read Books</span>
               </Link>
               <Link

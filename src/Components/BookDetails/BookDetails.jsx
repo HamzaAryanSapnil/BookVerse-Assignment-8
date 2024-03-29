@@ -47,12 +47,16 @@ const BookDetails = () => {
   };
   const handleReadBtn = () => {
     const getBooksFromReadingList = getStoredReadingList();
+    const wishlistBooks = getStoredWishlist();
     if (getBooksFromReadingList.includes(bookIdInt)) {
       toast("Already read this book");
       return;
     } 
     saveReadingList(bookIdInt);
-    removeFromWishlist(bookIdInt);
+    if (wishlistBooks.includes(bookIdInt)) {
+      removeFromWishlist(bookIdInt);
+      return;
+    }
     toast("Thanks for reading this book");
   };
   return (

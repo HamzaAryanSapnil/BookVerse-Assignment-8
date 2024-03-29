@@ -8,9 +8,9 @@ const getStoredReadingList = () => {
 };
 
 const getStoredWishlist = () => {
-  const storedWishlist = localStorage.getItem("wishlist");
-  if (storedWishlist) {
-    return JSON.parse(storedWishlist);
+  const storedWishlistBooks = localStorage.getItem("wishlist");
+  if (storedWishlistBooks) {
+    return JSON.parse(storedWishlistBooks);
   } else {
     return [];
   }
@@ -36,10 +36,11 @@ const saveReadingList = (id) => {
 
 const removeFromWishlist = (id) => {
   const storedWishlist = getStoredWishlist();
+  console.log(id, storedWishlist);
   const exists = storedWishlist.find((bookExist) => bookExist === id);
-  console.log("exists: ", exists, "storedWishlist: ", storedWishlist);
+  // console.log("exists: ", exists, "storedWishlist: ", storedWishlist);
   const newWishlist = storedWishlist.filter((bookId) => bookId !== id);
-  console.log("newWishlist: ", newWishlist);
+  // console.log("newWishlist: ", newWishlist);
   saveWishlist(newWishlist);
 };
 

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { getStoredReadingList } from "../../Utils/localStorage";
+import { IoPeople } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
+import { MdInsertPageBreak } from "react-icons/md";
 
 const ReadBooks = () => {
   const books = useLoaderData();
@@ -19,11 +22,11 @@ const ReadBooks = () => {
   return readBooks.length === 0 ? (
     <p>No books read yet</p>
   ) : (
-    <div>
+    <div className="lg:space-y-8">
       {readBooks.map((book) => (
         <div key={book.bookId}>
-          <div className="card card-side bg-base-100 shadow-xl">
-            <figure className="w-1/3">
+          <div className="card card-side flex-col md:flex-row bg-base-100 shadow-xl">
+            <figure className="md:w-1/3">
               <img
                 className="h-64 w-48 rounded-3xl "
                 src={book.image}
@@ -31,34 +34,47 @@ const ReadBooks = () => {
               />
             </figure>
             <div className="card-body">
-              <div className="">
+              <div className="space-y-2 py-3">
                 <h2 className="card-title font-playfair text-navHeading text-2xl font-bold">
                   {book.bookName}
                 </h2>
                 <p className="text-navHeadingEighty font-medium font-work text-base">
-                  {" "}
                   By: {book.author}
                 </p>
               </div>
-              <div className="flex gap-x-3 justify-start items-center">
-                Tag
+              <div className="flex gap-x-3 justify-start items-center pb-3">
+                <span className="text-navHeading font-bold font-work text-base">
+                  Tag
+                </span>
                 {book.tags.map((tag, idx) => (
                   <button key={idx} className="btn bookIdentity">
                     {tag}
                   </button>
                 ))}
-                <p>Year of Publishing: {book.yearOfPublishing}</p>
+                <p className="text-navHeadingEighty font-work text-base flex justify-start gap-x-3 items-center">
+                  {" "}
+                  <span>
+                    <CiLocationOn />
+                  </span>{" "}
+                  Year of Publishing: {book.yearOfPublishing}
+                </p>
               </div>
 
-              <div className="card-actions justify-start border-b-2">
-                <p className="text-navHeadingEighty font-medium font-work text-base">
+              <div className="card-actions justify-start border-b-2 pb-3">
+                <p className="text-navHeadingSixty  font-work text-base flex items-center gap-x-3">
+                  <span>
+                    <IoPeople />
+                  </span>{" "}
                   Publisher: {book.publisher}
                 </p>
-                <p className="text-navHeadingEighty font-medium font-work text-base">
+                <p className="text-navHeadingSixty  font-work text-base flex items-center gap-x-3">
+                  <span>
+                    <MdInsertPageBreak />
+                  </span>{" "}
                   Page: {book.totalPages}
                 </p>
               </div>
-              <div className="flex gap-x-3 justify-start items-center">
+              <div className="flex gap-x-3 justify-start items-center py-3">
                 <button className="btn catagoryBtn rounded-full">
                   Catagory: {book.category}
                 </button>
