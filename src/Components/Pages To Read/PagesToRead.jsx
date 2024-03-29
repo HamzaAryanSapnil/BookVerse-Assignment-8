@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredReadingList } from "../../Utils/localStorage";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
-
+import PropTypes from 'prop-types'
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
 const PagesToRead = () => {
@@ -37,7 +37,7 @@ const PagesToRead = () => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
   return (
-    <div className="mx-auto" >
+    <div className="flex justify-center items-center" >
       <BarChart
         width={800}
         height={600}
@@ -66,6 +66,14 @@ const PagesToRead = () => {
       </BarChart>
     </div>
   );
+};
+
+PagesToRead.propTypes = {
+  fill: PropTypes.string,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default PagesToRead;

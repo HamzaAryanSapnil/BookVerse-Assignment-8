@@ -15,7 +15,7 @@ const ListedBooks = () => {
       setWishBooks(booksInWishlist);
     }
   }, [books]);
-  const { bookId, image, bookName, author, category, rating, tags } = wishBooks ?? {};
+//   const { bookId, image, bookName, author, category, rating, tags } = wishBooks ?? {};
   return (
     <div className="container mx-auto">
       <div className="w-full flex justify-center items-center bg-navHeadingFive py-8 my-8">
