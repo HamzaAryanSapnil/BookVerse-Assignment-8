@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import  { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { getStoredReadingList } from "../../Utils/localStorage";
 
 const ReadBooks = () => {
@@ -68,6 +67,5 @@ const ReadBooks = () => {
   );
 };
 
-ReadBooks.propTypes = {};
 
 export default ReadBooks;

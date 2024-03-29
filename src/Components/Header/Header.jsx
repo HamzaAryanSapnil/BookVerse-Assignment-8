@@ -1,6 +1,10 @@
+
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+ 
+  
+  
   const links = (
     <>
       <li>
@@ -15,7 +19,7 @@ const Header = () => {
       </li>
       <li>
         <NavLink
-          to="/listedbooks"
+          to={`/listedbooks`}
           className={({isActive}) => {
             return isActive ? "navActive" : "navInActive" 
           } }
