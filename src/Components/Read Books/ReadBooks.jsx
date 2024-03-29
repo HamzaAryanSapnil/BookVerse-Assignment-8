@@ -25,7 +25,7 @@ const ReadBooks = () => {
         <div key={book.bookId}>
           <div className="card card-side bg-base-100 shadow-xl">
             <figure className="w-1/3">
-              <img src={book.image} alt="Movie" />
+              <img className="h-64 w-48 rounded-3xl " src={book.image} alt="Movie" />
             </figure>
             <div className="card-body">
               <div className="">
@@ -56,7 +56,7 @@ const ReadBooks = () => {
                 </p>
               </div>
               <div className="flex gap-x-3 justify-start items-center">
-                <button className="btn signUpBtn rounded-full">Catagory: {book.category}</button>
+                <button className="btn catagoryBtn rounded-full">Catagory: {book.category}</button>
                 <button className="btn ratingBtn rounded-full">Rating: {book.rating}</button>
                 <button className="btn signInBtn rounded-full">View Details</button>
               </div>

@@ -21,6 +21,8 @@ export default {
         rating: "#424242",
         ratingBtnBgFifteen: "#FFAC3326",
         ratingBtnColor: "#FFAC33",
+        catagoryBtnColor: "#328EFF",
+        catagoryBtnBgFifteen: "#328EFF26",
       },
       
       

@@ -12,7 +12,10 @@
     @apply  bg-btnBgSignup font-work font-semibold text-white md:text-lg;
 }
 .ratingBtn {
-    @apply  bg-ratingBtnBgFifteen text-ratingBtnColor font-work font-semibold  md:text-lg;
+    @apply  bg-ratingBtnBgFifteen text-ratingBtnColor font-work  md:text-lg;
+}
+.catagoryBtn {
+    @apply  bg-catagoryBtnBgFifteen text-catagoryBtnColor font-work   md:text-lg;
 }
 .bannerBtn {
     @apply  bg-btnBgSignIn font-work font-bold text-white text-xl;
