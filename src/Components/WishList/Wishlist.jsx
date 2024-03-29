@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { NavLink, useLoaderData } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { getStoredWishlist } from "../../Utils/localStorage";
 
 const Wishlist = () => {
@@ -66,7 +66,9 @@ const Wishlist = () => {
               <div className="flex gap-x-3 justify-start items-center">
                 <button className="btn catagoryBtn rounded-full">Catagory: {book.category}</button>
                 <button className="btn ratingBtn rounded-full">Rating: {book.rating}</button>
+               <Link to={`/bookDetails/${book.bookId}`} >
                 <button className="btn signInBtn rounded-full">View Details</button>
+               </Link>
               </div>
                 </div>
               </NavLink>

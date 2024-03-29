@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { getStoredReadingList } from "../../Utils/localStorage";
 
 const ReadBooks = () => {
@@ -56,7 +56,9 @@ const ReadBooks = () => {
               <div className="flex gap-x-3 justify-start items-center">
                 <button className="btn catagoryBtn rounded-full">Catagory: {book.category}</button>
                 <button className="btn ratingBtn rounded-full">Rating: {book.rating}</button>
+                <Link to={`/bookDetails/${book.bookId}`} >
                 <button className="btn signInBtn rounded-full">View Details</button>
+               </Link>
               </div>
             </div>
           </div>
